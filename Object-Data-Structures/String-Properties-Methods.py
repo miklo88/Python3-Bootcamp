@@ -56,3 +56,26 @@ print(lowercase.lower())
 
 x = 'Hi this is a split string'
 print(x.split('i'))
+
+#STRING INTERPOLATION
+print('//////////////Formating string literals, and .format method')
+# a good way to format objects into your strings for print statements is with the string .format() method.
+# the syntax is - 'String here{} also aqui {}'.format('something1', 'something2')
+print('The {2} {1} {0}'.format('fox', 'brown', 'quick'))
+# returns - 'The fox brown quick' using integer assignment
+print('First Name: {FName} Last Name: {LName}'.format(FName='Carl', LName='Redding'))
+# returns - First Name Carl, Last Name Redding. - using variable assignment keywords.
+
+#Float formatting follows "{value:width.precision f}"
+result = 100/77
+print(result)
+print("The result was {r:10.3f}".format(r=result)) #1.299
+# adding width will bring in more whitespace. but keep in mind you're mainly playing with precision.
+print("The result was {r:13f}".format(r=result)) #1.298701
+print("The result was {r:3.1f}".format(r=result)) #1.3
+
+#F string literals
+# new kid on the block. a lot of devs have been waiting for this feature to come out. crossplatform friendly.
+name = 'Celia'
+print(f'Her name is {name}')
+
