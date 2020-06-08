@@ -58,6 +58,7 @@ print(d.keys()) # returns dict_keys(['k1', 'k2', 'k3'])
 # seeing all of the values of a dictionary
 print(d.values()) # returns dict_values([125, 200, 300])
 # seeing all of the pair items
+#notice how theyre in parenthesis. what we recieved back were tuples!
 print(d.items()) # returns dict_items([('k1', 125), ('k2', 200), ('k3', 300)])
 
 
