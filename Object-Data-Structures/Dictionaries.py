@@ -36,7 +36,28 @@ flexible = {
     'k3': {'insidedictionary':100}
 }
 #lets see what we can pull data wise
-print(flexible['k2']) 
-print(flexible['k2'][1]) 
-print(flexible['k3'])
-print(flexible['k3']['insidedictionary'])
+print(flexible['k2']) # returns [0, 1, 2]
+print(flexible['k2'][1]) # returns 1
+print(flexible['k3']) # returns {'insidedictionary': 100}
+print(flexible['k3']['insidedictionary']) # returns 100
+#one more time for your mind
+newdict = {'key1': ['a','b','c']}
+#now lets grab the key1 and change b to uppercase. thank god python is flexible
+#we will be able to do this all on one line
+print(newdict['key1'][1].upper()) # returns B
+
+#lets add onto dictionaries now
+d = {'k1': 100, 'k2': 200}
+d['k3'] = 300
+print(d) # returns {'k1': 100, 'k2': 200, 'k3': 300}
+#overide a key value pair
+d['k1'] = 125
+print(d) # returns {'k1': 125, 'k2': 200, 'k3': 300}
+# seeing all of the keys of a dictionary
+print(d.keys()) # returns dict_keys(['k1', 'k2', 'k3'])
+# seeing all of the values of a dictionary
+print(d.values()) # returns dict_values([125, 200, 300])
+# seeing all of the pair items
+print(d.items()) # returns dict_items([('k1', 125), ('k2', 200), ('k3', 300)])
+
+
