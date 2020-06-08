@@ -42,5 +42,27 @@ print(poppeditem)
 newlist.pop(3) #should get rid of four and return that. remember indexing starts at 0
 print(newlist)
 
-#goofin with a new list
+#goofin with a new lists that are out of order
 goofin = ['l','k','j','h','g','f','d','s','a']
+goofinnoms = ['1','3','6','5','8','7','8','9','2']
+#sortinggggg
+goofin.sort()
+print(goofin)
+# returns - ['a', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 's']
+#newb mistake is this
+#newsortedgoofin = goofin.sort()
+#this wont work because sort wont return anything to be assigned to newsortedgoofin
+#lets do it again with goofinnoms
+goofinnoms.sort()
+print(goofinnoms)
+# returns - ['1', '2', '3', '5', '6', '7', '8', '8', '9']
+#does exactly what it says. reverses the list.
+goofin.reverse()
+goofinnoms.reverse()
+print(goofin)
+print(goofinnoms)
+#sneaky way of reversing a string with indexing.
+sneakylist = [1,2,3,4,5,6,7,8,9,10]
+print(sneakylist[::-1])
+
+
