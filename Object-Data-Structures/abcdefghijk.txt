@@ -1,0 +1,2 @@
+I created this random file
+This is an example of how python based on the mode will create the file no matter its title.
