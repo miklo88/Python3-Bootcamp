@@ -23,7 +23,7 @@ print("///// even or odd")
 print(20%2)
 print(21%2)
 
-# to the power 
+# to the power exponent
 print("///// to the power")
 print(2 ** 3)
 
@@ -32,3 +32,6 @@ print("///// equations PEDMAS")
 print(2 + 10 * 10 + 3)
 print((2 + 10) * (10 + 3))
 
+
+print(4**0.5)
+print(2 == 2.0)
