@@ -160,3 +160,19 @@ print(ispangram("The quick brown fox jumps over the lazy dog"))
 
 # string.ascii_lowercase
 # 'abcdefghijklmnopqrstuvwxyz'
+
+mylist = []
+twolist = []
+#create a new list
+for i in range(1,10):
+    # print(i)
+    if i == 5:
+        mylist.append(i)
+    elif i != 5:
+        twolist.append(i)
+    else: 
+        continue
+# return mylist
+
+print(mylist)
+print(twolist)
