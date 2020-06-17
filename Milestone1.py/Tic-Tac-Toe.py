@@ -16,7 +16,7 @@ then
 then 
 5)new visual
 '''
-#display information. three different lines of numbers. you can do it this way
+#DISPLAY INFORMATION. three different lines of numbers. you can do it this way
 # print([1,2,3])
 # print([4,5,6])
 # print([7,8,9])
@@ -33,6 +33,19 @@ row3 = [' ',' ',' ']
 #printing the example row three times.
 # display(row1,row2,row3)
 #grabbing a spot and replace it with data
-row2[1] = 'X'
-display(row1,row2,row3)
+# row2[1] = 'X'
+# display(row1,row2,row3)
+#now we need to take a user input and be able to re-assign x and o's to the three lists.
+'''
+Accepting user input
+'''
+# input("Please enter a value: ")
+#saving input. always returns a string. stores a string. using input you get a string muchacho.
+result = int(input("Choose your square!: "))
+#converting to an integer
+result_int = print(result)
+
+
+
+
 
