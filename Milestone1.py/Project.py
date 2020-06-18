@@ -34,8 +34,8 @@ def game_board(board):
     print('-|-|-')
     print(board[1]+'|'+board[2]+'|'+board[3])
     #test list
-test_board = ['#','X','O','X','O','X','O','X','O','X']
-game_board(test_board)
+# test_board = ['#','X','O','X','O','X','O','X','O','X']
+# game_board()
 
 #player input
 def player_input():
@@ -49,7 +49,7 @@ def player_input():
         return ('X','O')
     else:
         return ('O','X')
-player1_marker, player2_marker = player_input()
+# player1_marker, player2_marker = player_input()
 # print(player1_marker)
 # print(player2_marker)
 
@@ -57,9 +57,9 @@ player1_marker, player2_marker = player_input()
 # to the board.
 def place_marker(board, marker, position):
     board[position] = marker
-
+# place_marker()
 # place_marker(test_board, '&', 4)
-game_board(test_board)
+# game_board()
 
 def win_check(board, mark):
     #WIN TIC TAC TOE?
@@ -74,7 +74,7 @@ def win_check(board, mark):
     (board[1] == mark and board[5] == mark and board[9] == mark) or
     (board[3] == mark and board[5] == mark and board[7] == mark))
 # game_board(test_board)
-# win_check(test_board, 'X')
+# win_check()
 #Writing a function that uses the random module to randomly decide which player goes first.
 def choose_first():
     flip = random.randint(0,1)
@@ -82,7 +82,95 @@ def choose_first():
         return 'Player 1'
     else:
         return 'Player 2'
-
+# choose_first()
 #a function to see if a space in the board is available
 def space_check(board, position):
     return board[position] == ' '
+# space_check()
+#write a function and check if the board is full and returns a boolean value.
+#True if full, false for otherwise
+def full_board_check(board):
+    for i in range(1,10):
+        #if i have a space the board is not full and i'll return false
+        if space_check(board,i):
+            return False
+            #board is full if we return true
+        return True
+# full_board_check()
+# ask for a players next position. then uses the function from space_check to see if the space is available 
+def player_choice(board):
+    position = 0
+    while position not in [1,2,3,4,5,6,7,8,9] or not space_check(board,position):
+        position = int(input('Choose a position: (1-9) '))
+    return position
+# player_choice()
+#ask player if they want to play again
+def replay():
+    choice = input(f'Play again? Enter Yes or No')
+
+    return choice == 'Yes'
+
+#while loop to keep running the game
+print("Welcome to Tic Tac Toe")
+
+while True:
+    #play the game
+#set up BOARD, WHOS FIRST, CHOOSE MARKERS
+#game play, player one turn, player two turn
+    the_board = [' '] * 10
+    player1_marker, player2_marker = player_input()
+
+    #who goes first
+    turn = choose_first()
+    print(turn + ' will go first')
+
+    play_game = input('Ready to play? y or n?: ')
+    if player_input == 'y':
+        game_on = True
+    else:
+        game_on = False
+    
+    #gameplay
+    while game_on:
+        if turn == 'Player 1':
+            game_on(the_board)
+            #choose a position
+            position = player_choice(the_board)
+            #place marker on a position
+            place_marker(the_board,player1_marker,position)
+            #check if they won
+            if win_check(the_board,player1_marker):
+                game_on(the_board)
+                print('Player 1 has total victory!')
+                game_on = False
+            else:
+                if full_board_check(the_board):
+                    display_board(the_board)
+                    print("Tie Game")
+                    break
+                else:
+                    turn = 'Player 2'
+        else:
+            game_on(the_board)
+            #choose a position
+            position = player_choice(the_board)
+            #place marker on a position
+            place_marker(the_board,player2_marker,position)
+            #check if they won
+            if win_check(the_board,player2_marker):
+                game_on(the_board)
+                print('Player 2 has total victory!')
+                game_on = False
+            else:
+                if full_board_check(the_board):
+                    display_board(the_board)
+                    print("Tie Game")
+                    break
+                else:
+                    turn = 'Player 1'
+            #or check if there is a tie
+            #no tie and no win, then next players turn
+    if not replay():
+        break
+#break out of loop 
+
