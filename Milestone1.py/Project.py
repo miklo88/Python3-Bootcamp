@@ -1,4 +1,4 @@
-
+import random
 #creating inputs as I talk myself throught the game.
 #entering player details strings
 # input(f'Welcome to tic tac toe! This game involves two players! Player 1 enter your name: ')
@@ -58,21 +58,31 @@ player1_marker, player2_marker = player_input()
 def place_marker(board, marker, position):
     board[position] = marker
 
-place_marker(test_board, '&', 4)
+# place_marker(test_board, '&', 4)
 game_board(test_board)
 
 def win_check(board, mark):
     #WIN TIC TAC TOE?
-    #ALL ROWS, and check to see if they all share the same marker
-    (board[1] == mark and board[2] == mark and board[3] == mark ) or
-    (board[4] == mark and board[5] == mark and board[6] == mark ) or
-    (board[7] == mark and board[8] == mark and board[9] == mark ) or
+    return ((board[1] == mark and board[2] == mark and board[3] == mark) or
+    (board[4] == mark and board[5] == mark and board[6] == mark) or
+    (board[7] == mark and board[8] == mark and board[9] == mark) or
     #columns
-    (board[1] == mark and board[2] == mark and board[3] == mark ) or
-    (board[4] == mark and board[5] == mark and board[6] == mark ) or
-    (board[7] == mark and board[8] == mark and board[9] == mark ) or
+    (board[1] == mark and board[2] == mark and board[3] == mark) or
+    (board[4] == mark and board[5] == mark and board[6] == mark) or
+    (board[7] == mark and board[8] == mark and board[9] == mark) or
     #diagonal
-    (board[1] == mark and board[5] == mark and board[9] == mark ) or
-    (board[3] == mark and board[5] == mark and board[7] == mark )
-    #ALL COLUMNS, check to see if the marker matches
-    #2 diagonals, check to see match
+    (board[1] == mark and board[5] == mark and board[9] == mark) or
+    (board[3] == mark and board[5] == mark and board[7] == mark))
+# game_board(test_board)
+# win_check(test_board, 'X')
+#Writing a function that uses the random module to randomly decide which player goes first.
+def choose_first():
+    flip = random.randint(0,1)
+    if flip == 0:
+        return 'Player 1'
+    else:
+        return 'Player 2'
+
+#a function to see if a space in the board is available
+def space_check(board, position):
+    return board[position] == ' '
