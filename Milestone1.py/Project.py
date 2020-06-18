@@ -1,30 +1,4 @@
 import random
-#creating inputs as I talk myself throught the game.
-#entering player details strings
-# input(f'Welcome to tic tac toe! This game involves two players! Player 1 enter your name: ')
-# input(f'Player 2 enter your name: ')
-
-# #getting the game started
-# instructions = '''Perfect! let's get to know how Tic Tac Toe work's here in python. You should see a blank
-# board set up with three rows and three columns. To input your X or O you need to enter a number between 1-9.
-# 1,2,3 starting at the bottom left, going right. Then 4,5,6 in the middle left working right and 7,8,9 on the
-# top left working right. After you input your X or O then it will be the other players turn. 
-# The game will end if you can align three in a row. Invalid entries are as such. "one", "five", "car", 10, 25,
-# -4. Easy enought right?'''
-# print(instructions)
-# # string
-# input(f'To start game type Y, or quit the best game ever before trying type N: ')
-
-# #player picks marker
-# input(f'Player 1 pick a marker X or O: ')
-# #player inputs - ints
-# player1 = int(input(f'Player 1 input: '))
-# player2 = int(input(f'Player 2 input: '))
-
-# #exiting the game - strings
-# input(f'Congratulations you have won! Play again? Y or N:')
-# input(f'Oh no! You lost! Welp what can you do? Play again Y or N?: ')
-# # N = print('\n'*100)
 
 #printing out the board.
 def game_board(board):
@@ -42,7 +16,7 @@ def player_input():
     #output is a tuple(Player 1 marker, Player 2 marker) this is what your output looks like
     marker = ''
     #ask player 1 to choose X or O
-    while marker != 'X' and marker != 'O':
+    while (marker != 'X' and marker != 'O'):
         marker = input('Player 1, choose X or O: ').upper()
     
     if marker == 'X':
@@ -106,9 +80,10 @@ def player_choice(board):
 # player_choice()
 #ask player if they want to play again
 def replay():
-    choice = input(f'Play again? Enter Yes or No')
+    choice = input(f'Play again? Enter Yes or No: ')
 
     return choice == 'Yes'
+
 
 #while loop to keep running the game
 print("Welcome to Tic Tac Toe")
@@ -117,15 +92,15 @@ while True:
     #play the game
 #set up BOARD, WHOS FIRST, CHOOSE MARKERS
 #game play, player one turn, player two turn
-    the_board = [' '] * 10
+    theBoard = [' '] * 10
     player1_marker, player2_marker = player_input()
-
     #who goes first
     turn = choose_first()
     print(turn + ' will go first')
 
-    play_game = input('Ready to play? y or n?: ')
-    if player_input == 'y':
+    play_game = input('Ready to play? y or n: ')
+
+    if play_game.lower()[0] == 'y':
         game_on = True
     else:
         game_on = False
@@ -133,38 +108,40 @@ while True:
     #gameplay
     while game_on:
         if turn == 'Player 1':
-            game_on(the_board)
+            game_board(theBoard)
             #choose a position
-            position = player_choice(the_board)
+            position = player_choice(theBoard)
             #place marker on a position
-            place_marker(the_board,player1_marker,position)
+            place_marker(theBoard, player1_marker, position)
             #check if they won
-            if win_check(the_board,player1_marker):
-                game_on(the_board)
+            if win_check(theBoard, player1_marker):
+                game_on(theBoard)
                 print('Player 1 has total victory!')
                 game_on = False
             else:
-                if full_board_check(the_board):
-                    display_board(the_board)
+                if full_board_check(theBoard):
+                    game_board(theBoard)
                     print("Tie Game")
                     break
                 else:
                     turn = 'Player 2'
+
         else:
-            game_on(the_board)
+            #player 2 turn
+            game_board(theBoard)
             #choose a position
-            position = player_choice(the_board)
+            position = player_choice(theBoard)
             #place marker on a position
-            place_marker(the_board,player2_marker,position)
+            place_marker(theBoard, player2_marker, position)
             #check if they won
-            if win_check(the_board,player2_marker):
-                game_on(the_board)
+            if win_check(theBoard, player2_marker):
+                game_board(theBoard)
                 print('Player 2 has total victory!')
                 game_on = False
             else:
-                if full_board_check(the_board):
-                    display_board(the_board)
-                    print("Tie Game")
+                if full_board_check(theBoard):
+                    game_board(theBoard)
+                    print("Draw")
                     break
                 else:
                     turn = 'Player 1'
