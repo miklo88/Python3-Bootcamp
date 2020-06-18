@@ -34,7 +34,6 @@ def game_board(board):
     print('-|-|-')
     print(board[1]+'|'+board[2]+'|'+board[3])
     #test list
-test_board = [' ']*10
 test_board = ['#','X','O','X','O','X','O','X','O','X']
 game_board(test_board)
 
@@ -56,3 +55,8 @@ player1_marker, player2_marker = player_input()
 
 #writing a function that takes in the board list object. (x or o) and a position number and assigns it
 # to the board.
+def place_marker(board, marker, position):
+    board[position] = marker
+
+place_marker(test_board, '&', 4)
+game_board(test_board)
