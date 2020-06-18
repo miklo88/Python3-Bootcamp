@@ -60,3 +60,19 @@ def place_marker(board, marker, position):
 
 place_marker(test_board, '&', 4)
 game_board(test_board)
+
+def win_check(board, mark):
+    #WIN TIC TAC TOE?
+    #ALL ROWS, and check to see if they all share the same marker
+    (board[1] == mark and board[2] == mark and board[3] == mark ) or
+    (board[4] == mark and board[5] == mark and board[6] == mark ) or
+    (board[7] == mark and board[8] == mark and board[9] == mark ) or
+    #columns
+    (board[1] == mark and board[2] == mark and board[3] == mark ) or
+    (board[4] == mark and board[5] == mark and board[6] == mark ) or
+    (board[7] == mark and board[8] == mark and board[9] == mark ) or
+    #diagonal
+    (board[1] == mark and board[5] == mark and board[9] == mark ) or
+    (board[3] == mark and board[5] == mark and board[7] == mark )
+    #ALL COLUMNS, check to see if the marker matches
+    #2 diagonals, check to see match
