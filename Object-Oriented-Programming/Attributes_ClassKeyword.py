@@ -28,6 +28,10 @@ class NameOfClass():
 # creating our own user defined object
 # since everything in python is an object.
 class Dog():
+#PT 2 Class object attribute
+#same for any instance of a class
+    species = 'mammal'
+
 #your params are attributes of your object
     def __init__(self,name,breed,gender,spots):
         #Attributes
@@ -39,13 +43,53 @@ class Dog():
         #boolean true/false
         self.spots = spots
 
+        #methods = operations/actions ---> methods
+    # def bark(self):
+    def bark(self,number):
+        # print('GURRRL')
+        print('GURRRL My name is {} and the number is {}'.format(self.name,number))
+
 my_dog = Dog(name='Kevin',breed='Lab',gender='M',spots=False)
 
 print(my_dog.name)
 print(my_dog.breed)
 print(my_dog.gender)
 print(my_dog.spots)
+# the class object attribute
+print(my_dog.species)
+
+# print(my_dog.bark())
+print(my_dog.bark(5))
+
+####NEW CLASS
+class Circle():
+#CLASS OBJECT ATTRIBUTE
+    pi = 3.14
+#radius has a default value given to it that can be overridden
+    def __init__(self,radius=1):
+        self.radius = radius
+        #at the end circle.pi is done because its a reference to the class object. easier to read for bigger classes.
+        # self.area = radius*radius*Circle.pi 
+        self.area = radius*radius*self.pi
+    #METHOD
+    def get_circumference(self):
+        #note there is the cirlce.pi reference again.
+        # return self.radius * Cirlce.pi * 2
+        return self.radius * self.pi * 2
+
+# my_circle = Circle()
+#radius value overridden
+my_circle = Circle(30)
+print(my_circle.pi)
+print(my_circle.radius)
+print(my_circle.area)
+print(my_circle.get_circumference())
+
+
 
 #an instance of the sample class
 # my_sample = Sample()
 # print(type(my_sample))
+
+###PART TWO
+#class object attributes, then methods
