@@ -1,5 +1,5 @@
 class Potato:
-    def __init__(self, right_arm=[], left_arm=[], right_leg=[], left_leg=[], smile=[], eyes=[], bag=[]):
+    def __init__(self, right_arm, left_arm, right_leg, left_leg, smile, eyes, bag=[]):
         self.right_arm = right_arm
         self.left_arm = left_arm
         self.right_leg = right_leg
@@ -15,8 +15,7 @@ class Potato:
 # spud = Potato('right arm','left arm','right leg','left leg','cheek to cheek smile','blue eyes','bag')
 # print(spud)
 
-
-
+#item creation class so i can make things to put on the spud
 class Item():
     def __init__(self, item_name, item_description):
         self.item_name = item_name
