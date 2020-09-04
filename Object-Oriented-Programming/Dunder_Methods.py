@@ -82,7 +82,6 @@ class Cylinder:
         surface_covering = 2*pi*(radius**2) + 2*pi*radius*height
         return f'just scratching the surface {surface_covering}'
         
-
 height = 3
 radius = 2
 c = Cylinder()
