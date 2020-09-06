@@ -4,9 +4,11 @@ Create a bank account with two attributes.
 - balance
 
 methods:
--deposit
--withdrawals
-    withdrawals may not exceet available balance.
+-add_owner
+-add_to_balance
+-remove_from_balance
+    withdrawals may not exceet available balance.\
+    return to initial sequence.
     instantiate your class, make several deposists and withdrawals, 
     and test to makse sure the account can't be overdrawn.
 
@@ -21,24 +23,24 @@ class Account:
     
     def __str__(self):
         return f'Account: {self.owner} - Account Balance: {self.balance}'
-    
-    def add_owner(self,name):
-        
+    #adding name to account
+    def add_owner(self,name):       
         print(f'Account Name Entered: {name}')
         self.owner = self.owner + name
         print(f'Updated Account Name: {self.owner}')
         
-
+    #adding a deposit
     def add_to_balance(self,deposit):
         print(f'Amount added to account: {deposit}')
         self.balance = self.balance + deposit
         print(f'Updated account balance: {self.balance}')
-
+    #withdrawing from account.
     def remove_from_balance(self,withdrawal):
         # gotta check the balance of the account. compare it to the incoming withdrawal. 
         # if withdrawal is too much then no-go.
         if withdrawal >= self.balance:
             print(f'{withdrawal} amount exceeds current balance of: {self.balance}')
+            # return withdrawal
         else: 
             print(f'Amount withdrawn from account: {withdrawal}')
             self.balance = self.balance - withdrawal
@@ -58,3 +60,4 @@ account.remove_from_balance(withdrawal)
 # current balance of the account
 print('Current balance:', account.balance)
 print(account)
+
