@@ -33,7 +33,7 @@ class Account:
     #adding a password
     def add_username(self,username):
         self.username = self.username + username
-        print(f'Password created.')
+        print(f'Username created.')
     #adding a deposit
     def add_to_balance(self,deposit):
         print(f'Amount added to account: {deposit}')
@@ -51,7 +51,7 @@ class Account:
             self.balance = self.balance - withdrawal
             print(f'Updated account balanace: {self.balance}')
 
-accountVault = []
+# accountVault = {}
 #passing the account class args.  # 
 account = Account('', '', 0)
 #adding a name to the account
@@ -61,7 +61,7 @@ print(account)
 #adding a password
 username= input('Enter your username: ')
 account.add_username(username)
-accountVault.append(account)
+# accountVault.update(account.owner, account.username)
 print(account)
 # print(accountVault[0])
 
@@ -74,4 +74,4 @@ account.remove_from_balance(withdrawal)
 # current balance of the account
 print('Current balance:', account.balance)
 print(account)
-print(type(accountVault))
+# print(type(accountVault))
