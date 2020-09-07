@@ -15,20 +15,25 @@ methods:
 '''
 
 class Account:
-    def __init__(self,owner,balance):
+    def __init__(self, owner, username, balance):
         #account owner
         self.owner = owner
         # owners account balance
         self.balance = balance
+        # username
+        self.username = username
     
     def __str__(self):
-        return f'Account: {self.owner} - Account Balance: {self.balance}'
+        return f'Account owner: {self.owner} - Account username: {self.username} - Account Balance: {self.balance}'
     #adding name to account
     def add_owner(self,name):       
         print(f'Account Name Entered: {name}')
         self.owner = self.owner + name
         print(f'Updated Account Name: {self.owner}')
-        
+    #adding a password
+    def add_username(self,username):
+        self.username = self.username + username
+        print(f'Password created.')
     #adding a deposit
     def add_to_balance(self,deposit):
         print(f'Amount added to account: {deposit}')
@@ -46,18 +51,27 @@ class Account:
             self.balance = self.balance - withdrawal
             print(f'Updated account balanace: {self.balance}')
 
+accountVault = []
 #passing the account class args.  # 
-account = Account('', 0)
+account = Account('', '', 0)
 #adding a name to the account
 name = input('Enter your name: ')
 account.add_owner(name)
+print(account)
+#adding a password
+username= input('Enter your username: ')
+account.add_username(username)
+accountVault.append(account)
+print(account)
+# print(accountVault[0])
+
 # deposits to the account
 deposit = int(input('Enter how much to deposit: '))
 account.add_to_balance(deposit)
 #withdrawls to the account
-withdrawal = int(input('Enter how much to withdrawal: '))
+withdrawal = int(input('Enter how much to withdraw: '))
 account.remove_from_balance(withdrawal)
 # current balance of the account
 print('Current balance:', account.balance)
 print(account)
-
+print(type(accountVault))
