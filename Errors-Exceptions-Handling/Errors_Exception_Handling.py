@@ -25,7 +25,6 @@ finally: A final block of code to be executed, regardless of an error.
 #     print("add went well")
 #     print(result)
 
-
 # try:
 #     f = open('testfile', 'w')
 #     f.write("write a test line")
@@ -36,20 +35,45 @@ finally: A final block of code to be executed, regardless of an error.
 # finally:
 #     print("I always run.")
 
+# def ask_for_int():
+#     while True:
+#         try:
+#             result = int(input("Provide thy numba: "))
+#         except:
+#             print("Hey now, thats not a number.")
+#             continue
+#         else:
+#             print("Correct Integer")
+#             break
+#         finally:
+#             print("Finally out")
+#             print('I never stop running.')
+#             # continue
 
-def ask_for_int():
-    while True:
-        try:
-            result = int(input("Provide thy numba: "))
-        except:
-            print("Hey now, thats not a number.")
-            continue
-        else:
-            print("Correct Integer")
-            break
-        finally:
-            print("Finally out")
-            print('I never stop running.')
-            # continue
+# print(ask_for_int())
+# /////////// HOMEWORK FILE
+'''
+Problem 1. Handle the exception thrown by the code below by using try and except blocks.
+for i in ['a','b','c']:
+    print(i**2)
 
-print(ask_for_int())
+'''
+
+'''
+Problem 2.
+Handle the exception thrown by the code below by using try and except blocks. Then use a finally block to print('All Done.')
+'''
+
+'''
+Problem 3.
+Write a function that asks for an integer and prints the square of it. Use a while loop with a try, except, else block to account for incorrect inputs.
+def ask():
+    pass
+ask()
+// return
+Input an integer: null
+An error occurred! Please try again!
+Input an integer: 2
+Thank you, your number squared is:  4
+'''
+# /////////// HOMEWORK FILE
