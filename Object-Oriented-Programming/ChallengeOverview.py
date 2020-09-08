@@ -23,8 +23,6 @@ class Account:
         # username
         self.username = username
     
-    def __str__(self):
-        return f'Account owner: {self.owner} - Account username: {self.username} - Account Balance: {self.balance}'
     #adding name to account
     def add_owner(self,name):       
         print(f'Account Name Entered: {name}')
@@ -50,6 +48,9 @@ class Account:
             print(f'Amount withdrawn from account: {withdrawal}')
             self.balance = self.balance - withdrawal
             print(f'Updated account balanace: {self.balance}')
+
+    def __str__(self):
+        return f'Account owner: {self.owner} - Account username: {self.username} - Account Balance: {self.balance}'
 
 # accountVault = {}
 #passing the account class args.  # 
