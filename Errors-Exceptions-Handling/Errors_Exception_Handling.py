@@ -59,9 +59,16 @@ for i in ['a','b','c']:
 
 '''
 
+# try:
+# except:
+# finally:
+
 '''
 Problem 2.
 Handle the exception thrown by the code below by using try and except blocks. Then use a finally block to print('All Done.')
+x = 5
+y = 0
+z = x/y
 '''
 
 '''
@@ -77,3 +84,23 @@ Input an integer: 2
 Thank you, your number squared is:  4
 '''
 # /////////// HOMEWORK FILE
+# function input is integer. returns the integer squared.
+
+# num = int(input('Enter a number here: '))
+def square():
+    while True:
+        try:
+            num = int(input('Enter a number here: '))
+        except:
+            # num != int:
+            print('Must be a number.')
+            
+        else:
+            squared = num ** 2
+            return squared
+            
+        finally: 
+            print(f'Your number squared is :')
+            # print(f'Done')
+        
+print(square())
