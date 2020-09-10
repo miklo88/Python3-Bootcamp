@@ -38,7 +38,7 @@ values = {
     'King': 13,
     'Ace': 14,
 }
-
+#card class attributes defined as global values above.
 class Card:
     def __init__(self,suit,rank):
         self.suit = suit
