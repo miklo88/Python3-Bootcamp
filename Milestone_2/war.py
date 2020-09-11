@@ -21,6 +21,7 @@ game logic
 building the classes out here first.
 
 '''
+import random
 suits = ('Hearts','Diamonds','Spades','Clubs')
 ranks = ('Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King','Ace')
 values = {
@@ -38,7 +39,7 @@ values = {
     'King': 13,
     'Ace': 14,
 }
-#card class attributes defined as global values above.
+#card class attributes defined as global values above. creats a card with a suit,rank,value. ex. 
 class Card:
     def __init__(self,suit,rank):
         self.suit = suit
@@ -48,18 +49,67 @@ class Card:
     def __str__(self):
         return self.rank + ' of ' + self.suit
 
-    
+# Deck class - three things. 1)instantiate a new deck a.create all 52 card objects b.hold as a list of card objects.
+# 2) shuffle a deck through a method call a.random library shuffle() function. 3) deal cards from the deck object a.pop method from cards list 
+class Deck:
+    def __init__(self):
 
-card = Card('Hearts','Jack')
-print(card)
-print(card.suit)
-print(card.rank)
-print(card.value)
+        self.all_cards = []
+
+        for suit in suits:
+            for rank in ranks:
+                #create a card object.
+                created_card = Card(suit,rank)
+                self.all_cards.append(created_card)
+#now we created a deck, now its time to shuffle this deck.
+    def shuffle(self):
+        #be mindful random.shuffle technically returns nothing.
+        # shakey shakey shakey
+        random.shuffle(self.all_cards)
+
+    # dealing cards meow
+    #can do more like splitting deck in half, or deal multiple cards.
+    # for right now we only need to deal one. could have multiple functions and multiple inputs for invoking them. 
+    def deal_one(self):
+        return self.all_cards.pop()
+
+    # def __str__(self):
+    #      print(f'The Deck class : {created_card}')
+
+#deck class
+new_deck = Deck()
+first_card = new_deck.all_cards[0]
+last_card = new_deck.all_cards[-1]
+
+# prints deck
+for card_object in new_deck.all_cards:
+    print(card_object)
+
+print(f'Last Card : {last_card}')
+# print(new_deck.all_cards[0])
+print(f'First Card : {first_card}')
+new_deck.shuffle()
+print("'shuffle' 'shuffle' 'shuffle'")
+first_card = new_deck.all_cards[0]
+last_card = new_deck.all_cards[-1]
+print(f'Last Card : {last_card}')
+# print(new_deck.all_cards[0])
+print(f'First Card : {first_card}')
+mycard = new_deck.deal_one()
+print(mycard)
+print(len(new_deck.all_cards))
+# print(new_deck.all_cards)s
+# card class
+# card = Card('Hearts','Jack')
+# print(card)
+# print(card.suit)
+# print(card.rank)
+# print(card.value)
 # print(values[card.rank])
 # print(values[card.suit])
 
-print(len(suits))
-print(suits[0])
-print(suits[1])
-print(suits[2])
-print(suits[3])
+# print(len(suits))
+# print(suits[0])
+# print(suits[1])
+# print(suits[2])
+# print(suits[3])
