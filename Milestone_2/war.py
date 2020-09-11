@@ -76,14 +76,50 @@ class Deck:
     # def __str__(self):
     #      print(f'The Deck class : {created_card}')
 
+
+# PLAYER CLASS -
+'''
+The last thing we need to think about is translating a Deck/Hand of cards with a top and bottom, to a Python list.
+'''
+class Player:
+    def __init__(self, name):
+        self.name = name
+        self.all_cards = []
+    # now think of all the rules to the game. how will you write this out?
+
+    # play a single card you pop off of the begining of a list
+    #pop(0)
+    def play_card(self):
+        return self.all_cards.pop(0)
+        # pass
+    # adding a card to a list. append(goes to end of list)
+    def add_card(self, new_cards):
+        if type(new_cards) == type([]):
+            #for multiple cards
+            self.all_cards.extend(new_cards)
+        else:
+            #single card object
+            self.all_cards.append(new_cards)
+
+    #adding multiple cards 
+    # cards = cards in hand
+    # new cards won
+    # cards.extend(new) takes a list and mergest it with a new list
+    def war(self):
+        pass
+    def __str__(self):
+        return f'Player {self.name} has {len(self.all_cards)} cards.'
+
+
+
 #deck class
 new_deck = Deck()
 first_card = new_deck.all_cards[0]
 last_card = new_deck.all_cards[-1]
 
 # prints deck
-for card_object in new_deck.all_cards:
-    print(card_object)
+# for card_object in new_deck.all_cards:
+#     print(card_object)
 
 print(f'Last Card : {last_card}')
 # print(new_deck.all_cards[0])
@@ -96,9 +132,22 @@ print(f'Last Card : {last_card}')
 # print(new_deck.all_cards[0])
 print(f'First Card : {first_card}')
 mycard = new_deck.deal_one()
-print(mycard)
-print(len(new_deck.all_cards))
-# print(new_deck.all_cards)s
+
+# your_hand = []
+# your_hand.append(mycard)
+
+# print('Your hand:', your_hand[0])
+print('my card:', mycard)
+print('Cards left in deck', len(new_deck.all_cards))
+
+# Player class
+new_player = Player('Carlitos')
+# player.name()
+print(new_player)
+new_player.add_card([mycard,mycard,mycard])
+print(new_player)
+print(new_player.all_cards[0])
+
 # card class
 # card = Card('Hearts','Jack')
 # print(card)
