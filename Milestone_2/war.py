@@ -105,8 +105,7 @@ class Player:
     # cards = cards in hand
     # new cards won
     # cards.extend(new) takes a list and mergest it with a new list
-    def war(self):
-        pass
+
     def __str__(self):
         return f'Player {self.name} has {len(self.all_cards)} cards.'
 
@@ -147,7 +146,8 @@ print(new_player)
 new_player.add_card([mycard,mycard,mycard])
 print(new_player)
 print(new_player.all_cards[0])
-
+print(new_player.play_card())
+print(new_player)
 # card class
 # card = Card('Hearts','Jack')
 # print(card)
