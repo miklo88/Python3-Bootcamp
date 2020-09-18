@@ -119,7 +119,7 @@ last_card = new_deck.all_cards[-1]
 # prints deck
 # for card_object in new_deck.all_cards:
 #     print(card_object)
-
+print("Dealing/shuffling the deck")
 print(f'Last Card : {last_card}')
 # print(new_deck.all_cards[0])
 print(f'First Card : {first_card}')
@@ -127,9 +127,9 @@ new_deck.shuffle()
 print("'shuffle' 'shuffle' 'shuffle'")
 first_card = new_deck.all_cards[0]
 last_card = new_deck.all_cards[-1]
-print(f'Last Card : {last_card}')
-# print(new_deck.all_cards[0])
-print(f'First Card : {first_card}')
+# print(f'Last Card : {last_card}')
+# # print(new_deck.all_cards[0])
+# print(f'First Card : {first_card}')
 mycard = new_deck.deal_one()
 
 # your_hand = []
@@ -145,8 +145,10 @@ new_player = Player('Carlitos')
 print(new_player)
 new_player.add_card([mycard,mycard,mycard])
 print(new_player)
-print(new_player.all_cards[0])
-print(new_player.play_card())
+print(f'Players Hand: {new_player.all_cards}')
+# print(new_player.all_cards[1])
+# print(new_player.all_cards[2])
+print(f'Card Played: {new_player.play_card()}')
 print(new_player)
 # card class
 # card = Card('Hearts','Jack')
