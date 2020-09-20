@@ -43,7 +43,7 @@ class Deck:
 
         for suit in suits:
             for rank in ranks:
-                #create a card object.
+                #create a card object. Card class aqui
                 created_card = Card(suit,rank)
                 self.all_cards.append(created_card)
 #now we created a deck, now its time to shuffle this deck.
@@ -57,6 +57,3 @@ class Deck:
     # for right now we only need to deal one. could have multiple functions and multiple inputs for invoking them. 
     def deal_one(self):
         return self.all_cards.pop()
-
-    # def __str__(self):
-    #      print(f'The Deck class : {created_card}')

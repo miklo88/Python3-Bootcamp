@@ -4,7 +4,7 @@ The last thing we need to think about is translating a Deck/Hand of cards with a
 '''
 class Player:
     def __init__(self, name):
-        self.name = name
+        self.name = name 
         self.all_cards = []
     # now think of all the rules to the game. how will you write this out?
 

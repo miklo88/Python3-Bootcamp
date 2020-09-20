@@ -26,46 +26,50 @@ from Card import Card, Deck
 from Player import Player
 
 
+# while True:
+    # => deal/shuffle cards and initiate game.
+introduction = '''
+Welcome to war! Battle it out with another player and win all the cards!
+'''
+print(introduction)
+# Player class ///////////////////////////////
+# new_player = input("Enter your name here: ")
+# Player(new_player)
+new_player = Player('player_one')
+new_player2 = Player('player_two')
+
 #deck class
 new_deck = Deck()
 first_card = new_deck.all_cards[0]
 last_card = new_deck.all_cards[-1]
-
-# prints deck
-# for card_object in new_deck.all_cards:
-#     print(card_object)
-print("Dealing/shuffling the deck")
-print(f'Last Card : {last_card}')
-# print(new_deck.all_cards[0])
-print(f'First Card : {first_card}')
+print('Deck is ready, lets play!', new_deck)
+print("Dealing cards")
 new_deck.shuffle()
-print("'shuffle' 'shuffle' 'shuffle'")
-first_card = new_deck.all_cards[0]
-last_card = new_deck.all_cards[-1]
-# print(f'Last Card : {last_card}')
-# # print(new_deck.all_cards[0])
-# print(f'First Card : {first_card}')
+print("'shuffle', 'shuffle', 'shuffle'")
+# deck should be re-distributed.
 mycard = new_deck.deal_one()
-
 # your_hand = []
 # your_hand.append(mycard)
 
 # print('Your hand:', your_hand[0])
-print('my card:', mycard)
+# print('my card:', mycard)
 print('Cards left in deck', len(new_deck.all_cards))
 
-# Player class
-new_player = Player('Carlitos')
-# player.name()
+# # Player class ///////////////////////////////
+# new_player = Player('Carlitos')
+# new_player2 = Player('Carlitos')
+# # player.name()
 print(new_player)
-new_player.add_card([mycard,mycard,mycard])
-print(new_player)
+new_player.add_card([mycard])
+# print(new_player)
+print('Cards left in deck', len(new_deck.all_cards))
 print(f'Players Hand: {new_player.all_cards}')
 # print(new_player.all_cards[1])
 # print(new_player.all_cards[2])
-print(f'Card Played: {new_player.play_card()}')
+print(f'{new_player.name} Played: {new_player.play_card()}')
 print(new_player)
-# card class
+
+# card class ///////////////////////////////
 # card = Card('Hearts','Jack')
 # print(card)
 # print(card.suit)
